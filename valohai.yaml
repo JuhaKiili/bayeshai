@@ -1,0 +1,64 @@
+- step:
+    name: test
+    image: juhavalohai/bayesmark
+    command: 
+      - bayesmark-launch {parameters} -dir /tmp -b 123 -v
+    parameters:
+      - name: studies
+        type: integer
+        description: How many times single optimizer tested with single dataset+model
+        pass-as: -r {v}
+        default: 5
+      - name: iterations
+        type: integer
+        description: How many times single optimizer tested with single dataset+model
+        pass-as: -n {v}
+        default: 50
+      - name: suggestions
+        type: integer
+        description: How many times single optimizer tested with single dataset+model
+        pass-as: -n {v}
+        default: 5
+      - name: optimizers
+        type: string
+        description: List of optimizers
+        pass-as: -o {v}
+        default: PySOT
+      - name: models
+        type: string
+        description: List of models
+        pass-as: -c {v}
+        default: DT
+      - name: datasets
+        type: string
+        description: List of datasets
+        pass-as: -d {v}
+        default: digits        
+      - name: metrics
+        type: string
+        description: List of scoring metrics
+        pass-as: -m {v}
+        default: acc 
+
+# studies       -r    How many times single optimizer tested with single dataset+model
+# iterations    -n    How many loops in single study
+# suggestions   -p    Set of suggestions per single loop (parallel)
+
+# optimizers    -o    List of optimizers
+# models        -c    List of models
+# data          -d    List of datasets
+# metric        -m    List of scoring metrics
+
+# total = r * n * p * o * c * d * m
+
+# MVP competition example:
+
+# 3 studies
+# 20 iterations
+# 3 suggestions
+# 1 optimizer
+# 5 models
+# 1 dataset
+# 2 metrics
+
+# =1800 executions
