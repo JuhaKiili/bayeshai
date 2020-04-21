@@ -17,7 +17,7 @@
       - name: suggestions
         type: integer
         description: How many times single optimizer tested with single dataset+model
-        pass-as: -n {v}
+        pass-as: -p {v}
         default: 5
       - name: optimizers
         type: string
