@@ -40,7 +40,7 @@
         pass-as: -m {v}
         default: acc
     inputs:
-      - name: test_input
+      - name: optimizer
 
 
 
