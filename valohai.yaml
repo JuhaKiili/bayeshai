@@ -38,7 +38,11 @@
         type: string
         description: List of scoring metrics
         pass-as: -m {v}
-        default: acc 
+        default: acc
+    inputs:
+      - name: test_input
+
+
 
 # studies       -r    How many times single optimizer tested with single dataset+model
 # iterations    -n    How many loops in single study
