@@ -19,11 +19,6 @@
         description: How many times single optimizer tested with single dataset+model
         pass-as: -p {v}
         default: 5
-      - name: optimizers
-        type: string
-        description: List of optimizers
-        pass-as: -o {v}
-        default: PySOT
       - name: models
         type: string
         description: List of models
